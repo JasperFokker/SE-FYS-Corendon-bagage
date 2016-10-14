@@ -27,13 +27,14 @@ public class Thom extends Application
     
     public static GridPane returnScherm() {
         GridPane scherm = new GridPane();
-        scherm.setPrefSize(600, 450);
+        scherm.setPrefSize(800, 450);
         
         /* 
         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         =====================================================================
         HIERONDER WERK JE!!
         HIERONDER WERK JE!!
+        Thom: Ik heb jouw template iets groter gemaakt omdat het over de menubar gaat -jasper
         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         =====================================================================
         */

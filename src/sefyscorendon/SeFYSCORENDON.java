@@ -38,7 +38,8 @@ public class SeFYSCORENDON extends Application
             @Override 
             public void handle(ActionEvent event) {
                 //event handle voor de button
-                ui.setCenter(rick);
+                ui.setCenter(thom);
+                ui.setLeft(null);
             }
         });
         
@@ -72,6 +73,7 @@ public class SeFYSCORENDON extends Application
             public void handle(ActionEvent event) {
                 //event handle voor de button
                 ui.setCenter(thom);
+                ui.setLeft(null);
             }
         });
         
