@@ -26,6 +26,7 @@ public class SeFYSCORENDON extends Application
         BorderPane ui = new BorderPane();
         VBox menu = new VBox();
         GridPane rick = Rick.returnScherm();
+        GridPane rick2 = Rick.returnScherm2();
         GridPane jason = Rick.returnScherm();
         GridPane thom = Rick.returnScherm();
         GridPane floris = Rick.returnScherm();
@@ -49,8 +50,9 @@ public class SeFYSCORENDON extends Application
         btn2.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
             public void handle(ActionEvent event) {
-                //event handle voor de button
+                //verander rick naar rick2 voor tabelscherm
                 ui.setCenter(rick);
+                
             }
         });
         
