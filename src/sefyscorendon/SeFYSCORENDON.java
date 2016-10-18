@@ -17,13 +17,18 @@ import javafx.stage.Stage;
  */
 public class SeFYSCORENDON extends Application
 {
+    static BorderPane ui = new BorderPane();
     
-    
+    //wissel scherm.
+    public static void change(GridPane gridpane){
+        ui.setCenter(gridpane);
+        
+    }
     
     @Override
     public void start(Stage primaryStage)
     {
-        BorderPane ui = new BorderPane();
+        
         VBox menu = new VBox();
         GridPane rick = Rick.returnScherm();
         GridPane rick2 = Rick.returnScherm2();
@@ -55,7 +60,7 @@ public class SeFYSCORENDON extends Application
                 
             }
         });
-        
+                    
         Button btn3 = new Button();
         btn3.setText("JASON");
         btn3.setPrefSize(200, 90);
