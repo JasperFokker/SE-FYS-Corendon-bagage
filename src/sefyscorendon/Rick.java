@@ -1,5 +1,6 @@
 package sefyscorendon;
 
+import java.util.Objects;
 import javafx.scene.control.Label;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -23,7 +24,7 @@ import javafx.scene.text.Font;
  * @author Rick
  */
 public class Rick extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) {
 
@@ -31,31 +32,31 @@ public class Rick extends Application {
     }
 
     public static GridPane returnScherm() {
-        
+
         //Zoekscherm met dropdown boxen en textfield
         GridPane scherm = new GridPane();
         scherm.setPrefSize(600, 450);
         scherm.setHgap(1);
         scherm.setVgap(10);
         scherm.setPadding(new Insets(25, 25, 25, 25));
-        
+
         //Inhoud 1e combobox
         ObservableList<String> options = FXCollections.observableArrayList(
-                        "Samsonite",
-                        "Lacoste",
-                        "SuperTrash",
-                        "Visconti",
-                        "Converse"
-                );
+                "Samsonite",
+                "Lacoste",
+                "SuperTrash",
+                "Visconti",
+                "Converse"
+        );
         //Inhoud 2e combobox
         ObservableList<String> kleuren = FXCollections.observableArrayList(
-                        "Blauw",
-                        "Rood",
-                        "Zwart",
-                        "Bruin",
-                        "Paars"
-                );
-        
+                "Blauw",
+                "Rood",
+                "Zwart",
+                "Bruin",
+                "Paars"
+        );
+
         //Labels, Textvelden, buttons en comboboxen.
         final ComboBox comboBoxMerk = new ComboBox(options);
         final ComboBox comboBoxKleur = new ComboBox(kleuren);
@@ -82,10 +83,14 @@ public class Rick extends Application {
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //Hier moet switch van scherm 1 naar 2 komen.
+                //Jan en Samsonite zijn tijdelijk, hier wil ik ideaal gezien de hele Naam en Merk colommen kunnen vergelijken
+                if (Objects.equals(textveld.getText(),"Jan") && Objects.equals(comboBoxMerk.getValue(), "Samsonite")) {
+                    
+                    SeFYSCORENDON.change(Rick.returnScherm2());
+                }
             }
         });
-        
+
         //Dit kan korter, geen idee hoe.
         scherm.add(label, 0, 0);
         scherm.add(label2, 0, 1);
@@ -99,10 +104,11 @@ public class Rick extends Application {
 
         return scherm;
     }
+
     public static GridPane returnScherm2() {
         //Tabelscherm dat linkt naar Tabeldata.java 
-        GridPane scherm = new GridPane();
-        scherm.setPrefSize(600, 450);
+        GridPane scherm2 = new GridPane();
+        scherm2.setPrefSize(600, 450);
 
         ObservableList<Tabeldata> data = FXCollections.observableArrayList(
                 new Tabeldata("Anna de Bruin", "Samsonite", "Blauw", "17 KG"),
@@ -133,7 +139,7 @@ public class Rick extends Application {
 
         TableColumn gewichtCol = new TableColumn("Gewicht");
         gewichtCol.setCellValueFactory(new PropertyValueFactory<Tabeldata, String>("Gewicht"));
-        
+
         //Verdeeld de colommen gelijk over de gridpane.
         naamCol.prefWidthProperty().bind(table.widthProperty().multiply(0.25));
         merkCol.prefWidthProperty().bind(table.widthProperty().multiply(0.25));
@@ -142,13 +148,12 @@ public class Rick extends Application {
 
         table.setItems(data);
         table.getColumns().addAll(naamCol, merkCol, kleurCol, gewichtCol);
-        
-        scherm.add(label, 0, 0);
-        scherm.add(table, 0, 1);
 
-        return scherm;
+        scherm2.add(label, 0, 0);
+        scherm2.add(table, 0, 1);
+
+        return scherm2;
 
     }
-    
-  
+
 }
