@@ -101,6 +101,8 @@ public class SeFYSCORENDON extends Application
         
         
         Scene scene = new Scene(ui, 800, 450);
+        String css = SeFYSCORENDON.class.getResource("Theme.css").toExternalForm();
+        scene.getStylesheets().add(css);
         
         primaryStage.setTitle("Main Screen");
         primaryStage.setScene(scene);
