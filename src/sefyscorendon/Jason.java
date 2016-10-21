@@ -44,10 +44,8 @@ public class Jason extends Application
         label.setText("Instellingen");
         
         Label text1 = new Label();
-        text1.setText("Vul het gewicht afgerond in in kilogrammen");
         
         Label text2 = new Label();
-        text2.setText("Dit geeft niet, dit kan gewoon leeg gelaten worden.");
         
         Button btn = new Button();
         btn.setText("Kan het gewicht niet invoeren.");
@@ -55,8 +53,8 @@ public class Jason extends Application
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
             public void handle(ActionEvent event) {
-                scherm.add(text1,0,10);
-                
+                text1.setText("Vul het gewicht afgerond in in kilogrammen");
+                text2.setText("");
             }
         });
         
@@ -67,10 +65,13 @@ public class Jason extends Application
         btn2.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event) {
-                scherm.add(text2,0,10);
+                text2.setText("Dit geeft niet, dit kan gewoon leeg gelaten worden.");
+                text1.setText("");
             }
         });
-                    
+        
+        scherm.add(text1,0,10);
+        scherm.add(text2,0,10);
         scherm.add(label, 0, 0);
         scherm.add(btn, 0, 1);
         scherm.add(btn2, 0, 2);
