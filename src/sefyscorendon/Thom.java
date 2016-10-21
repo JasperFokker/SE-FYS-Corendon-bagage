@@ -5,30 +5,39 @@
  */
 package sefyscorendon;
 
-import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import static sefyscorendon.SeFYSCORENDON.ui;
 
 /**
  *
  * @author jimmy
  */
-public class Thom extends Application
-{
+public class Thom extends Application {
+
     @Override
-    public void start(Stage primaryStage)
-    {
+    public void start(Stage primaryStage) {
         returnScherm();
     }
-    
+
     public static GridPane returnScherm() {
+
         GridPane scherm = new GridPane();
         scherm.setPrefSize(800, 450);
-        
+
         /* 
         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         =====================================================================
@@ -37,32 +46,49 @@ public class Thom extends Application
         Thom: Ik heb jouw template iets groter gemaakt omdat het over de menubar gaat -jasper
         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         =====================================================================
-        */
+         */
+        scherm.setAlignment(Pos.CENTER);
+        scherm.setHgap(10);
+        scherm.setVgap(10); 
+        scherm.setPadding(new Insets(25, 25, 25, 25));
+
+        Text scenetitle = new Text("Welkom");
+        scenetitle.setFont(Font.font("Verdana", FontWeight.NORMAL, 20));
+        scherm.add(scenetitle, 0, 0, 2, 1);
+
+        Label userName = new Label("Gebruikersnaam:");
+        scherm.add(userName, 0, 1);
+
+        TextField userTextField = new TextField();
+        scherm.add(userTextField, 1, 1);
+
+        Label pw = new Label("Wachtwoord:");
+        scherm.add(pw, 0, 2);
+
+        PasswordField pwBox = new PasswordField();
+        scherm.add(pwBox, 1, 2);
+
+        Button btn = new Button("Log in");
+        HBox hbBtn = new HBox(10);
+        hbBtn.setAlignment(Pos.BOTTOM_CENTER);
+        hbBtn.getChildren().add(btn);
+        scherm.add(hbBtn, 1, 4);
+
         
         
-        
-        Label label = new Label();
-        label.setText("Hello World");
-        
-        
-        Button btn = new Button();
-        btn.setText("Hello World");
-        btn.setPrefSize(300, 20);
         btn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override 
-            public void handle(ActionEvent event) {
-                //event handle voor de button
-                System.out.println("Hello World");
+
+            @Override
+            public void handle(ActionEvent e) {
+                SeFYSCORENDON.change(null);
+                SeFYSCORENDON.menu();
+                //krijg het niet voor elkaar om hem naar hoofdpagina te linken
+            
             }
         });
-                    
-        scherm.add(label, 0, 0);
-        scherm.add(btn, 0, 1);
         
         
-        
-        
-        
+
         /* 
         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         =====================================================================
@@ -70,7 +96,7 @@ public class Thom extends Application
         HIERONDER WERK JE NIET!!
         +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         =====================================================================
-        */
+         */
         return scherm;
     }
 }

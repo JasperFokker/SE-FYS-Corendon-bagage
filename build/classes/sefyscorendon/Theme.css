@@ -1,14 +1,19 @@
 .root{
     -fx-background-color: #333333;
+    
 }
 .button{
     -fx-background-color: #d81e05;
     -fx-text-fill: #ffffff;
-    -fx-background-radius: 0;
-    -fx-border-width: 2;
-    -fx-border-color: #333333
     
+    -fx-border-width: 2;
+    -fx-border-color: #333333;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent; 
 }
+
+
+
 .label{
     -fx-text-fill: #ffffff;
 }

@@ -83,11 +83,8 @@ public class Rick extends Application {
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //Jan en Samsonite zijn tijdelijk, hier wil ik ideaal gezien de hele Naam en Merk colommen kunnen vergelijken
-                if (Objects.equals(textveld.getText(),"Jan") && Objects.equals(comboBoxMerk.getValue(), "Samsonite")) {
-                    
                     SeFYSCORENDON.change(Rick.returnScherm2());
-                }
+                
             }
         });
 

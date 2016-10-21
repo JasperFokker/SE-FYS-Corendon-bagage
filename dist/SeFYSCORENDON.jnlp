@@ -8,11 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="SeFYSCORENDON.jar" size="15370" download="eager" />
+    <jar href="SeFYSCORENDON.jar" size="16583" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="SeFYSCORENDON" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="sefyscorendon.SeFYSCORENDON"  name="SeFYSCORENDON" />
+  <jfx:javafx-desc  width="800" height="600" main-class="sefyscorendon.Rick"  name="SeFYSCORENDON" />
   <update check="always"/>
 </jnlp>
