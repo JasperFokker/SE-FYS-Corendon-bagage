@@ -36,9 +36,9 @@ public class SeFYSCORENDON extends Application
     {
         
         
-        GridPane rick = Rick.returnScherm();
-        GridPane jason = Rick.returnScherm();
-        GridPane thom = Rick.returnScherm();
+        GridPane rick = Floris.returnScherm();
+        GridPane jason = Jason.returnScherm();
+        GridPane thom = Thom.returnScherm();
         GridPane floris = Floris.returnScherm();
         
         
@@ -55,7 +55,7 @@ public class SeFYSCORENDON extends Application
         });
         
         Button btn2 = new Button();
-        btn2.setText("RICK");
+        btn2.setText("Zoeken");
         btn2.setPrefSize(200, 90);
         btn2.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
@@ -66,7 +66,7 @@ public class SeFYSCORENDON extends Application
         });
                     
         Button btn3 = new Button();
-        btn3.setText("JASON");
+        btn3.setText("Help");
         btn3.setPrefSize(200, 90);
         btn3.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
@@ -77,7 +77,7 @@ public class SeFYSCORENDON extends Application
         });
         
         Button btn4 = new Button();
-        btn4.setText("THOM");
+        btn4.setText("Login");
         btn4.setPrefSize(200, 90);
         btn4.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
@@ -89,7 +89,7 @@ public class SeFYSCORENDON extends Application
         });
         
         Button btn5 = new Button();
-        btn5.setText("FLORIS");
+        btn5.setText("Formulier");
         btn5.setPrefSize(200, 90);
         btn5.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
