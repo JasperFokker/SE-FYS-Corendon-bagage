@@ -20,11 +20,11 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import static sefyscorendon.SeFYSCORENDON.ui;
+import static sefyscorendon.SeFYSCORENDON.scherm;
 
 /**
  *
- * @author jimmy
+ * @author Thom
  */
 public class Thom extends Application {
 

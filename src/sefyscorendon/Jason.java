@@ -41,7 +41,7 @@ public class Jason extends Application
         
         
         Label label = new Label();
-        label.setText("Instellingen");
+        label.setText("Veelgevraagde vragen:");
         
         Label text1 = new Label();
         

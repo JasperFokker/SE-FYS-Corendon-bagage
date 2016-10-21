@@ -1,7 +1,6 @@
 package sefyscorendon;
 
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -13,100 +12,77 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author TEAM TWEE
+ * @author Jasper & Jimmy
  */
 public class SeFYSCORENDON extends Application
 {
-    static BorderPane ui = new BorderPane();
+    static BorderPane scherm = new BorderPane();
     static VBox menu = new VBox();
     
     //wissel scherm.
     public static void change(GridPane gridpane){
-        ui.setCenter(gridpane);
-        
+        scherm.setCenter(gridpane);
     }
     
     public static void menu(){
-        ui.setLeft(menu);
+        scherm.setLeft(menu);
     }
-    
     
     @Override
     public void start(Stage primaryStage)
     {
+        GridPane zoekScherm = Rick.returnScherm();
+        GridPane helpScherm = Jason.returnScherm();
+        GridPane inlogScherm = Thom.returnScherm();
+        GridPane formulierScherm = Floris.returnScherm();
         
-        
-        GridPane rick = Rick.returnScherm();
-        GridPane jason = Jason.returnScherm();
-        GridPane thom = Thom.returnScherm();
-        GridPane floris = Floris.returnScherm();
-        
-        
-        Button btn1 = new Button();
-        btn1.setText("UITLOGGEN");
-        btn1.setPrefSize(200, 90);
-        btn1.setOnAction(new EventHandler<ActionEvent>() {
+        Button uitlogButton = new Button();
+        uitlogButton.setText("Uitloggen");
+        uitlogButton.setPrefSize(200, 112.5);
+        uitlogButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
             public void handle(ActionEvent event) {
-                //event handle voor de button
-                ui.setCenter(thom);
-                ui.setLeft(null);
+                //Veranderd het huidige scherm naar het inlogscherm en maakt het menu onzichtbaar.
+                scherm.setCenter(inlogScherm);
+                scherm.setLeft(null);
             }
         });
         
-        Button btn2 = new Button();
-        btn2.setText("Zoeken");
-        btn2.setPrefSize(200, 90);
-        btn2.setOnAction(new EventHandler<ActionEvent>() {
+        Button zoekButton = new Button();
+        zoekButton.setText("Zoeken");
+        zoekButton.setPrefSize(200, 112.5);
+        zoekButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
             public void handle(ActionEvent event) {
-                ui.setCenter(rick);
-                
+                scherm.setCenter(zoekScherm);
             }
         });
                     
-        Button btn3 = new Button();
-        btn3.setText("Help");
-        btn3.setPrefSize(200, 90);
-        btn3.setOnAction(new EventHandler<ActionEvent>() {
+        Button helpButton = new Button();
+        helpButton.setText("Help");
+        helpButton.setPrefSize(200, 112.5);
+        helpButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
             public void handle(ActionEvent event) {
-                //event handle voor de button
-                ui.setCenter(jason);
+                scherm.setCenter(helpScherm);
             }
         });
         
-        Button btn4 = new Button();
-        btn4.setText("Login");
-        btn4.setPrefSize(200, 90);
-        btn4.setOnAction(new EventHandler<ActionEvent>() {
+        Button formulierButton = new Button();
+        formulierButton.setText("Formulier");
+        formulierButton.setPrefSize(200, 112.5);
+        formulierButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
             public void handle(ActionEvent event) {
-                //event handle voor de button
-                ui.setCenter(thom);
-                ui.setLeft(null);
+                scherm.setCenter(formulierScherm);
             }
         });
         
-        Button btn5 = new Button();
-        btn5.setText("Formulier");
-        btn5.setPrefSize(200, 90);
-        btn5.setOnAction(new EventHandler<ActionEvent>() {
-            @Override 
-            public void handle(ActionEvent event) {
-                //event handle voor de button
-                ui.setCenter(floris);
-            }
-        });
+        menu.getChildren().addAll(zoekButton,helpButton,formulierButton,uitlogButton);
         
+        scherm.setCenter(inlogScherm);
         
-        menu.getChildren().addAll(btn1,btn2,btn3,btn4,btn5);
-        
-        ui.setLeft(menu);
-        
-        
-        
-        Scene scene = new Scene(ui, 800, 450);
+        Scene scene = new Scene(scherm, 800, 450);
         String css = SeFYSCORENDON.class.getResource("Theme.css").toExternalForm();
         scene.getStylesheets().add(css);
         
@@ -115,7 +91,6 @@ public class SeFYSCORENDON extends Application
         primaryStage.show();
     }
     
-   
     public static void main(String[] args)
     {
         launch(args);
