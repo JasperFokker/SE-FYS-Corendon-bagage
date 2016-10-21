@@ -18,25 +18,21 @@ import javafx.stage.Stage;
 public class SeFYSCORENDON extends Application
 {
     static BorderPane ui = new BorderPane();
-    static VBox menu = new VBox();
+    
     //wissel scherm.
     public static void change(GridPane gridpane){
         ui.setCenter(gridpane);
         
     }
     
-    public static void menu(){
-        ui.setLeft(menu);
-    }   
-    
     @Override
     public void start(Stage primaryStage)
     {
         
-        
+        VBox menu = new VBox();
         GridPane rick = Rick.returnScherm();
-        GridPane jason = Jason.returnScherm();
-        GridPane thom = Thom.returnScherm();
+        GridPane jason = Rick.returnScherm();
+        GridPane thom = Rick.returnScherm();
         GridPane floris = Floris.returnScherm();
         
         
