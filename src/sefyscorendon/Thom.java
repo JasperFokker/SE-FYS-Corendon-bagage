@@ -80,8 +80,8 @@ public class Thom extends Application {
 
             @Override
             public void handle(ActionEvent e) {
-                SeFYSCORENDON.change(Thom.returnScherm());
-                
+                SeFYSCORENDON.change(null);
+                SeFYSCORENDON.menu();
                 //krijg het niet voor elkaar om hem naar hoofdpagina te linken
             
             }
