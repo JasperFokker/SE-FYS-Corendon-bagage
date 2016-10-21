@@ -11,7 +11,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- *
  * @author Jasper & Jimmy
  */
 public class SeFYSCORENDON extends Application
