@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author jimmy
+ * @author Jason
  */
 public class Jason extends Application
 {
@@ -41,22 +41,34 @@ public class Jason extends Application
         
         
         Label label = new Label();
-        label.setText("Hello World");
+        label.setText("Instellingen");
         
         
         Button btn = new Button();
-        btn.setText("Hello World");
+        btn.setText("Taal:");
         btn.setPrefSize(300, 20);
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override 
             public void handle(ActionEvent event) {
                 //event handle voor de button
-                System.out.println("Hello World");
+                System.out.println("Taal:");
+            }
+        });
+        
+       
+        Button btn2 = new Button();
+        btn2.setText("Achtergrondkleur:");
+        btn2.setPrefSize(300, 20);
+        btn2.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Achtergrondkleur:");
             }
         });
                     
         scherm.add(label, 0, 0);
         scherm.add(btn, 0, 1);
+        scherm.add(btn2, 0, 2);
         
         
         

@@ -31,9 +31,9 @@ public class SeFYSCORENDON extends Application
         
         VBox menu = new VBox();
         GridPane rick = Rick.returnScherm();
-        GridPane jason = Rick.returnScherm();
-        GridPane thom = Rick.returnScherm();
-        GridPane floris = Rick.returnScherm();
+        GridPane jason = Jason.returnScherm();
+        GridPane thom = Thom.returnScherm();
+        GridPane floris = Floris.returnScherm();
         
         
         Button btn1 = new Button();
