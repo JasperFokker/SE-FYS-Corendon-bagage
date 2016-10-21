@@ -33,7 +33,7 @@ public class SeFYSCORENDON extends Application
         GridPane rick = Rick.returnScherm();
         GridPane jason = Rick.returnScherm();
         GridPane thom = Rick.returnScherm();
-        GridPane floris = Rick.returnScherm();
+        GridPane floris = Floris.returnScherm();
         
         
         Button btn1 = new Button();
