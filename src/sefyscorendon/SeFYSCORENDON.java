@@ -77,7 +77,7 @@ public class SeFYSCORENDON extends Application
             }
         });
         
-        menu.getChildren().addAll(zoekButton,helpButton,formulierButton,uitlogButton);
+        menu.getChildren().addAll(zoekButton,formulierButton,helpButton,uitlogButton);
         
         scherm.setCenter(inlogScherm);
         

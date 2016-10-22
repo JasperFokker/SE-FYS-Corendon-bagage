@@ -83,8 +83,12 @@ public class Rick extends Application {
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                    SeFYSCORENDON.change(Rick.returnScherm2());
-                
+                textveld.setText(null);
+                comboBoxMerk.setValue(null);
+                comboBoxKleur.setValue(null);
+                textveld4.setText(null);
+                SeFYSCORENDON.change(Rick.returnScherm2());
+
             }
         });
 
