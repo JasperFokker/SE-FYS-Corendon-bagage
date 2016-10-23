@@ -37,16 +37,6 @@ public class Thom extends Application {
 
         GridPane scherm = new GridPane();
         scherm.setPrefSize(800, 450);
-
-        /* 
-        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        =====================================================================
-        HIERONDER WERK JE!!
-        HIERONDER WERK JE!!
-        Thom: Ik heb jouw template iets groter gemaakt omdat het over de menubar gaat -jasper
-        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        =====================================================================
-         */
         scherm.setAlignment(Pos.CENTER);
         scherm.setHgap(10);
         scherm.setVgap(10); 
@@ -74,29 +64,18 @@ public class Thom extends Application {
         hbBtn.getChildren().add(btn);
         scherm.add(hbBtn, 1, 4);
 
-        
-        
+             
         btn.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent e) {
-                SeFYSCORENDON.change(null);
+                SeFYSCORENDON.change(WelkomScherm.returnScherm());
                 SeFYSCORENDON.menu();
-                //krijg het niet voor elkaar om hem naar hoofdpagina te linken
+                
             
             }
         });
         
-        
-
-        /* 
-        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        =====================================================================
-        HIERONDER WERK JE NIET!!
-        HIERONDER WERK JE NIET!!
-        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        =====================================================================
-         */
         return scherm;
     }
 }

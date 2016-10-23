@@ -34,6 +34,7 @@ public class SeFYSCORENDON extends Application
         GridPane helpScherm = Jason.returnScherm();
         GridPane inlogScherm = Thom.returnScherm();
         GridPane formulierScherm = Floris.returnScherm();
+        GridPane welkomScherm = WelkomScherm.returnScherm();
         
         Button uitlogButton = new Button();
         uitlogButton.setText("Uitloggen");
